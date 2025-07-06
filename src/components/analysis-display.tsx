@@ -1,6 +1,6 @@
 import { type AnalyzeSymptomsOutput } from "@/ai/flows/analyze-symptoms";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { HeartPulse, ShieldCheck, Pill } from "lucide-react";
+import { HeartPulse, ShieldCheck, Pill, Tablet } from "lucide-react";
 
 interface AnalysisDisplayProps {
   analysis: AnalyzeSymptomsOutput;
@@ -11,6 +11,7 @@ export function AnalysisDisplay({ analysis }: AnalysisDisplayProps) {
   const hasPotentialDiseases = analysis.potentialDiseases && analysis.potentialDiseases.trim() !== "";
   const hasPreventionMethods = analysis.preventionMethods && analysis.preventionMethods.trim() !== "";
   const hasTreatmentSuggestions = analysis.treatmentSuggestions && analysis.treatmentSuggestions.trim() !== "";
+  const hasSuggestedMedicines = analysis.suggestedMedicines && analysis.suggestedMedicines.trim() !== "";
 
   return (
     <div className="space-y-8 animate-fade-in">
@@ -33,6 +34,13 @@ export function AnalysisDisplay({ analysis }: AnalysisDisplayProps) {
           title="Treatment Suggestions"
           icon={<Pill className="h-7 w-7 text-primary" />}
           content={analysis.treatmentSuggestions}
+        />
+      )}
+      {hasSuggestedMedicines && (
+        <InfoCard
+          title="Suggested Medicines"
+          icon={<Tablet className="h-7 w-7 text-primary" />}
+          content={analysis.suggestedMedicines}
         />
       )}
     </div>

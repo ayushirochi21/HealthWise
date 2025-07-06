@@ -21,7 +21,7 @@ export async function handleSymptomAnalysis(symptoms: string): Promise<{ data: A
 
   try {
     const result = await analyzeSymptoms({ symptoms: validated.data });
-    if (!result.potentialDiseases && !result.preventionMethods && !result.treatmentSuggestions) {
+    if (!result.potentialDiseases && !result.preventionMethods && !result.treatmentSuggestions && !result.suggestedMedicines) {
       throw new AiError('The AI returned an empty response. Please try rephrasing your symptoms.');
     }
     return { data: result, error: null };

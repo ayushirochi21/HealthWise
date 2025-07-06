@@ -28,6 +28,9 @@ const AnalyzeSymptomsOutputSchema = z.object({
   treatmentSuggestions: z
     .string()
     .describe('Suggestions for treating the potential diseases.'),
+  suggestedMedicines: z
+    .string()
+    .describe('A list of suggested medicines for the potential diseases. This should be a general guide and not a prescription.'),
 });
 export type AnalyzeSymptomsOutput = z.infer<typeof AnalyzeSymptomsOutputSchema>;
 
@@ -42,7 +45,8 @@ const prompt = ai.definePrompt({
   prompt: `You are a medical expert specializing in disease diagnosis and prevention.
 
 You will analyze the symptoms and health data provided by the user and identify potential diseases.
-You will also provide methods to prevent these diseases and suggest possible treatment options.
+You will also provide methods to prevent these diseases, suggest possible treatment options, and list potential medicines.
+The suggested medicines should be for informational purposes only and not a direct prescription.
 
 Symptoms and Health Data: {{{symptoms}}}`,
 });
