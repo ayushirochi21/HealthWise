@@ -72,7 +72,11 @@ export function SymptomForm({ setAnalysis, setLoading, isLoading }: SymptomFormP
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-lg py-6" disabled={isLoading}>
+        <Button
+          type="submit"
+          className="w-full text-lg py-6 border border-accent bg-gradient-to-b from-accent/70 to-accent text-accent-foreground transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--accent)/0.7)]"
+          disabled={isLoading}
+        >
           {isLoading ? (
             <>
               <Loader2 className="mr-2 h-5 w-5 animate-spin" />
