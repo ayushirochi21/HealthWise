@@ -64,7 +64,7 @@ export function SymptomForm({ setAnalysis, setLoading, isLoading }: SymptomFormP
               <FormControl>
                 <Textarea
                   placeholder="e.g., I have a high fever, a persistent cough, and I'm feeling very tired..."
-                  className="resize-none h-40 text-base shadow-sm"
+                  className="resize-none h-24 text-base shadow-sm"
                   {...field}
                 />
               </FormControl>

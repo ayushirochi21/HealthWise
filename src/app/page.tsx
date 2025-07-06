@@ -52,6 +52,9 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <footer className="text-center p-4 text-sm text-muted-foreground border-t">
+        @Ayushi Varshney
+      </footer>
     </div>
   );
 }
